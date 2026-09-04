@@ -5,3 +5,10 @@ export function findAllUsers(): User[] {
     return users;
 }
 
+export function findUserById(id: number): User {
+    const user = users.find(user => user.id === id);
+
+    if (!user){
+        throw new Error(`Usruario com id ${id} não encontrado.`);
+    }return user;
+}

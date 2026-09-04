@@ -8,3 +8,11 @@ export function getAllUsers(_request: Request, response: Response): void {
     response.status(200).json(users);
 }
 
+export function getUserById(request: Request, response: Response): void {
+    
+    const id = Number(request.params.id);
+
+    const userId = UserService.findUserById(id);
+
+    response.status(200).json(userId);
+}
