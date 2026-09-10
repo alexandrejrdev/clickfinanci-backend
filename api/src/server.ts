@@ -3,6 +3,7 @@ import routerUsers from './routes/user.route.ts';
 
 const app = express();
 
+app.use(express.json());
 app.use('/users', routerUsers);
 
 app.listen(3000);
@@ -10,14 +11,14 @@ app.listen(3000);
 
 
 
-//http.createServer((request, response) => {
+/* http.createServer((request, response) => {
 
-//    if (request.url !== '/users'){
-//        response.writeHead(404, { 'content-type': 'application/json' });
-//       response.end(JSON.stringify({ message: 'Recurso não encontrado.'}));
-//        return;
-//    }
-//    response.writeHead(200, { 'content-type': 'application/json' });
-//    response.end(JSON.stringify(users));
+    if (request.url !== '/users'){
+        response.writeHead(404, { 'content-type': 'application/json' });
+       response.end(JSON.stringify({ message: 'Recurso não encontrado.'}));
+        return;
+    }
+    response.writeHead(200, { 'content-type': 'application/json' });
+    response.end(JSON.stringify(users));
 
-//}).listen(3000);
+}).listen(3000); */
