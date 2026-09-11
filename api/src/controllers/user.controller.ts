@@ -1,6 +1,6 @@
 import type { Request, Response } from "express";
 import * as UserService from "../services/user.service.ts";
-import type { CreatUser } from "../types/user.type.ts";
+import type { CreatUser, UpdateUser } from "../types/user.type.ts";
 
 
 export function getAllUsers(_request: Request, response: Response): void {
@@ -23,6 +23,18 @@ export function createUser(request: Request, response: Response): void {
     const { name, email, password } = request.body as CreatUser;
 
     const user = UserService.insertUser({ name, email, password });
+
+    response.status(201).json(user);
+
+}
+
+export function updateUser (request: Request, response: Response): void {
+
+    const id = Number(request.params.id);
+
+    const { name, email, password } = request.body as UpdateUser;
+
+    const user = UserService.modifyUser(id, { name, email, password });
 
     response.status(200).json(user);
 
