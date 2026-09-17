@@ -53,3 +53,15 @@ export function modifyUser(id: number, {
      
     return user;
 }
+
+export function removeUser(id: number): void {
+    const userIndex = users.findIndex(user => user.id === id);
+    //o findindex se nao encontrar ele retorna (-1)
+
+    if (userIndex === -1) {
+        throw new Error(`Usuário com id ${id} não encontrado.`);
+    }
+
+    //o splice retira o id do array 
+    users.splice(userIndex, 1);
+}

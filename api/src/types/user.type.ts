@@ -9,4 +9,11 @@ export type CreatUser = Omit<User,'id'>;
 
 export type UpdateUser = Partial<Omit<User,'id'>>;
 
+/* export type DeleteUser = 
+
+find index
+Splice */
+
+
+
 

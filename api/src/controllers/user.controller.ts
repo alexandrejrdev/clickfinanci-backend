@@ -28,7 +28,7 @@ export function createUser(request: Request, response: Response): void {
 
 }
 
-export function updateUser (request: Request, response: Response): void {
+export function updateUser(request: Request, response: Response): void {
 
     const id = Number(request.params.id);
 
@@ -38,4 +38,13 @@ export function updateUser (request: Request, response: Response): void {
 
     response.status(200).json(user);
 
+}
+
+export function deleteUser(request: Request,response: Response): void {
+
+    const id = Number(request.params.id);
+
+    UserService.removeUser(id);
+
+    response.status(204).send();
 }
