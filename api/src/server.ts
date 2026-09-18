@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json());
 app.use('/users', routerUsers);
 
-app.listen(3000);
+app.listen(process.env.PORT);
 
 
 
