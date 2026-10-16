@@ -1,0 +1,14 @@
+import { z } from 'zod';
+
+export const createUserSchema = z.object({
+    id: z.number(),
+    name: z.string().min(2),
+    email: z.string(),
+    password: z.string().min(6)
+})
+
+export const updateUserSchema = createUserSchema.partial();
+
+export type CreateUser = z.infer<typeof createUserSchema>;
+export type UpdateteUser = z.infer<typeof updateUserSchema>;
+
