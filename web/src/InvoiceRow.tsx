@@ -1,4 +1,5 @@
 import { Invoice } from "./InvoiceType.ts";
+import { formatCurrency, formatDate, formatStatus,  } from "./utils.ts";
 
 interface InvoiceRowPops {
     data: Invoice;
@@ -11,10 +12,10 @@ export default function InvoiceRow({data}:InvoiceRowPops){
 
     return <tr>
         <td>{customer.name}</td>
-        <td>{amount} </td>
-        <td>{issueDate} </td>
-        <td>{dueDate} </td>
-        <td>{status}</td>
+        <td>{formatCurrency(amount)} </td>
+        <td>{formatDate(issueDate)} </td>
+        <td>{formatDate(dueDate)} </td>
+        <td>{formatStatus(status)}</td>
     </tr>;
 }
 

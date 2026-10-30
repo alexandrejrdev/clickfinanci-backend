@@ -5,8 +5,8 @@ const invoices: Invoice[] = [{
     id: 1,
     amount: 110000,
     status: 'pending',
-    issueDate: '10/10/2026',
-    dueDate: '16/11/2026',
+    issueDate: '2026-10-10',
+    dueDate: '2026-11-16',
     customer: {
         id: 10,
         name: 'Barbearia Navalha de Ouro',
@@ -16,8 +16,8 @@ const invoices: Invoice[] = [{
     id: 2,
     amount: 120000,
     status: 'pending',
-    issueDate: '10/10/2026',
-    dueDate: '16/11/2026',
+    issueDate: '2026-10-10',
+    dueDate: '2026-11-16',
     customer: {
         id: 20,
         name: 'Bodega do Ze',
@@ -28,8 +28,8 @@ const invoices: Invoice[] = [{
     id: 3,
     amount: 130000,
     status: 'pending',
-    issueDate: '10/10/2026',
-    dueDate: '16/11/2026',
+    issueDate: '2026-10-10',
+    dueDate: '2026-11-16',
     customer: {
         id: 30,
         name: 'Padaria da maria',
@@ -39,6 +39,7 @@ const invoices: Invoice[] = [{
 
 export default function App() {
     return <>
+        
         <InvoiceTable datas={invoices} />
     </>;
 }

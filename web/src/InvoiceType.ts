@@ -1,9 +1,9 @@
-export type InvoceStatus = 'paid' | 'pending';
+export type InvoiceStatus = 'paid' | 'pending';
 
 export interface Invoice {
     id: number;
     amount: number;
-    status: InvoceStatus;
+    status: InvoiceStatus;
     issueDate: string;
     dueDate: string;
     customer: {
